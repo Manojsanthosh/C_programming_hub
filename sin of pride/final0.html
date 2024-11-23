@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="c logo.jpg">
+    <link rel="shortcut icon" href="c logo.jpg" type="image/x-icon">
+    <title>C Programming hub</title>
+    <style>
+        
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+            height: 100%;
+            width: 100%;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 190%;
+            border-radius: 2px;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        center {
+            text-align: center;
+        }
+
+        h1 {
+            color: #4a90e2; 
+            font-style: italic;
+        }
+
+        hr {
+            border: 2px solid black; 
+        }
+
+        p {
+            font-size: 2px;
+            line-height: 1.6;
+        }
+
+        button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: navy; 
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 30px;
+            margin: 20px 0;
+            transition: transform 0.2s ease-in-out;
+            height: 100px;
+            width: 220px;
+            font-size: 30px;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        nav {
+            font-size: 18px;
+            height: 130px;
+            width: 240px;
+            background-color: black;
+            color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 20px;
+            border: 10px groove #4a90e2; 
+            transition: box-shadow 0.3s ease-in-out;
+        }
+    
+        div {
+            font-size: 18px;
+            height: 130px;
+            width: 170px;
+            background-color: white;
+            color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 1px;
+            border: 5px groove dodgerblue; 
+            transition: box-shadow 0.3s ease-in-out;
+        }
+    
+
+       
+     
+         
+        h2 {
+            color: #4a90e2; /* Dodger Blue */
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .help-section {
+            background-color:  rgb(73, 73, 153);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        h2.help-heading {
+            color: #4a90e2; 
+            margin-bottom: 10px;
+        }
+
+        p.help-text {
+            color: #fff;
+            font-size: 26px;
+        }
+
+       
+        .c-programming-section {
+            background: url('click img---') center/cover;
+            background-color: whitesmoke;
+            color: black;
+            font-size: 25px;
+            height: 10%;
+            width: 40%;
+        }
+
+        .a{
+            font-size: 22px;
+        }
+
+        .b{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body style="background-color: lightgrey;">
+    <center>
+        <h1 class="b">Welcome!!</h1>
+        <hr>
+        <br>
+        <br>
+        <p><h3 class="a" style="color: black;">In this platform, you can explore programs, program examples, and interview questions for free.<br><br>
+        Click the start learning button to step on the C program</h3></p>
+    </center>
+    <br>
+    <center>
+      <nav class="c-programming-section">
+          <h2 style="color: black;">C Programming</h2>
+          <h2 class="c"><a href="login.html"><button>Start Learning</button></a></h2>
+      </nav>
+  </center><br>
+    <center class="slideshow-container">
+        <!-- Slides -->
+        <div class="mySlides">
+            <img src="c4.png" alt="Slide 1">
+        </div>
+
+        <div class="mySlides">
+            <img src="c2.jpg" alt="Slide 2">
+        </div>
+
+        <div class="mySlides">
+            <img src="c3.jpg" alt="Slide 3">
+        </div>
+
+        
+        <a class="prev" onclick="plusSlides(-1)"></a>
+        <a class="next" onclick="plusSlides(1)"></a>
+        <script>
+          let slideIndex = 0;
+          showSlides();
+  
+          function showSlides() {
+              let i;
+              const slides = document.getElementsByClassName("mySlides");
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {
+                  slideIndex = 1;
+              }
+              slides[slideIndex - 1].style.display = "block";
+              setTimeout(showSlides, 2000); 
+          }
+      </script>
+    </center>
+    <br><br>
+    
+    <br><br>
+    <br>
+    <hr >
+ 
+        <center>
+            <h2 class="help-heading" style="color:black;">Ask for help below id</h2>
+            <p class="help-text" style="color:black;">cprogramminghub@gmail.com</p>
+        </center>
+
+    
+</body>
+</html>

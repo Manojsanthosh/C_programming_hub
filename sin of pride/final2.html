@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="c logo.jpg">
+  <link rel="shortcut icon" href="c logo.jpg" type="image/x-icon">
+  <title>C Programming Hub</title>
+  <link rel="icon" href="c logo.jpg">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      
+      padding: 3em;
+      text-align: center;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    button {
+      display: grid;
+      padding: 10px 15px;
+      background-color: #333;
+      color: #fff;
+      border: 20;
+      cursor: pointer;
+      border-radius: 30px;
+      margin: 0 140px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 50px;
+      display: none;
+      animation: fadeIn 1s ease-out;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    p {
+      padding-left: 10px;
+      border-left: 6px solid blue;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    iframe{
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 ><img src="c logo.jpg" height="50px" width="50px">C Programming Hub</h1>
+  </header>
+
+  <nav>
+    <button onclick="toggleSection('topics')">Topics</button><br>
+    <button onclick="toggleSection('examples')">Examples</button><br>
+    <button onclick="toggleSection('questions')">Interview Questions</button><br>
+    <button onclick="toggleSection('videos')">Videos</button><br>
+  </nav>
+
+  <!-- Rest of your sections remain unchanged -->
+
+  <script>
+    function toggleSection(sectionId) {
+      var sections = document.querySelectorAll('section');
+      sections.forEach(function(section) {
+        section.style.display = section.id === sectionId ? 'block' : 'none';
+      });
+    }
+
+    // Add other functions as before
+
+  </script>
+
+ 
+<section id="topics">
+
+  <h2>C Programming Topics</h2>
+  <button onclick="toggleContent('variables')">Variables and Data Types</button><br>
+  <button onclick="toggleContent('controlFlow')">Control Flow</button><br>
+  <button onclick="toggleContent('loops')">Loops</button><br>
+  <button onclick="toggleContent('functions')">Functions</button><br>
+  <button onclick="toggleContent('arrays')">Arrays and Pointers</button><br>
+  <button onclick="toggleContent('structures')">Structures and Unions</button><br>
+  <button onclick="toggleContent('fileHandling')">File Handling</button>
+</section>
+
+<section id="variables">
+  <h2>Variables and Data Types</h2>
+  <p> In C, variables are containers for storing data values. The data type of a variable determines the type of data it can hold.</p>
+  <button onclick="showVariableExample()">Show Example</button>
+  <pre id="variable-example" style="display: none;">
+    <h2>Variables and Data Types:</h2>
+    #include &lt;stdio.h &gt;
+
+    int main() {
+      // Variable declaration
+      int age;
+
+      // Variable assignment
+      age = 25;
+
+      // Print the value
+      printf("Age: %d\n", age);
+
+      return 0;
+    }
+  </pre>
+</section>
+
+<section id="controlFlow">
+  <h2>Control Flow</h2>
+  <p>Control flow structures in C, such as if, else, and switch, 
+    allow you to make decisions in your program based on conditions.<br><br>
+
+    <b>if-else statement:</b>
+    The if-else statement in C is a conditional statement that allows a program to execute 
+    different blocks of code based on a specified condition. The syntax for the if-else statement is as follows:<br><br>
+    <b>Syntax:</b><br><br>
+    <mark>if </mark>(condition) <br>{
+      // code to be executed if the condition is true
+  } 
+  <br><mark>else </mark><br>{
+      // code to be executed if the condition is false
+  }
+  <br><br>
+
+  <b>switch statement:</b>
+  
+  The switch statement in C is a control statement that allows a variable to be tested for equality against 
+  a list of values. Here's the basic syntax of a switch statement:<br><br>
+  <b>Syntax:</b><br><br>
+switch (expression) <br>{
+    case 1:<br>
+        // code to be executed if expression is equal to constant1<br>
+        break;<br>
+        <br>
+    case 2:<br>
+        // code to be executed if expression is equal to constant2<br>
+        break;<br>
+        <br>
+    // more cases can be added as needed<br>
+    <br>
+    default:<br>
+        // code to be executed if expression doesn't match any of the constants<br>
+}
+
+
+  </p>
+  <!-- Add relevant examples or explanations here -->
+  <button onclick="controlFlowExample()">Show Example</button>
+  <pre id="controlFlow-example" style="display: none;">
+    <h2>If-else:</h2>
+    #include &lt;stdio.h &gt;
+
+      int main() {
+          int num;
+          printf("Enter an integer: ");
+          scanf("%d", &num);
+      
+          // true if num is perfectly divisible by 2
+          if(num % 2 == 0)
+              printf("%d is even.", num);
+          else
+              printf("%d is odd.", num);
+          
+          return 0;
+      }
+      <h2>switch case:</h2>
+      #include <code>&lt;<stdio.h>&gt;</code>
+
+        int main() {
+            int day = 3;
+        
+            switch (day) {
+                case 1:
+                    printf("Monday\n");
+                    break;
+        
+                case 2:
+                    printf("Tuesday\n");
+                    break;
+        
+                case 3:
+                    printf("Wednesday\n");
+                    break;
+        
+                case 4:
+                    printf("Thursday\n");
+                    break;
+        
+                case 5:
+                    printf("Friday\n");
+                    break;
+        
+                case 6:
+                    printf("Saturday\n");
+                    break;
+        
+                case 7:
+                    printf("Sunday\n");
+                    break;
+        
+                default:
+                    printf("Invalid day\n");
+            }
+        
+            return 0;
+        }
+        
+  </pre>
+</section>
+
+<section id="loops">
+  <h2>Loops</h2>
+  <p>Loops, including for, while, and do-while, enable you to repeat a block of code multiple times based on a specified condition.<br><br>
+    Loops are fundamental for controlling the flow of a program and are commonly used for tasks like iterating through arrays, processing data,
+     and implementing repetitive tasks.<br> Each type of loop has its own use cases, and the choice of loop depends on the specific
+      requirements of the task at hand.<br><br>
+     <b>for loop:</b> 
+
+The for loop is used when the number of iterations is known in advance.
+It consists of three parts: initialization, condition, and update.
+Initialization is executed once at the beginning, the condition is checked before each iteration, and the update is executed after each iteration.<br><br>
+
+<b>while loop:</b>
+
+The while loop is used when the number of iterations is not known in advance.
+It continues to execute the loop body as long as the specified condition is true.
+The condition is checked before entering the loop, and if it is false initially, the loop body may not execute at all.<br><br>
+
+<b>do-while loop:</b>
+
+The do-while loop is similar to the while loop but guarantees that the loop body is executed at least once.
+It first executes the loop body and then checks the condition.
+If the condition is true, it continues to execute the loop; otherwise, it exits
+  </p>
+  <!-- Add relevant examples or explanations here -->
+  <button onclick="LoopsExample()">Show Example</button>
+  <pre id="Loops" style="display: none;">
+    <h2>Loops:</h2>
+    #include &lt;stdio.h &gt;
+        int main()
+{
+int i = 0;
+
+for (i = 1; i <= 10; i++)   //it is for loop 
+{
+printf( "Hello World\n"); 
+}
+return 0;
+}
+<h2> for Loops:</h2>
+#include &lt;stdio.h &gt;
+
+  int main() {
+      int i = 1;
+      while (i <= 5) {
+          printf("%d ", i);
+          i++;
+      }
+      return 0;
+  }
+  <h2>do-while:</h2>
+  #include &lt;stdio.h &gt;
+
+    int main() {
+        int i = 1;
+        do {
+            printf("%d ", i);
+            i++;
+        } while (i <= 5);
+        return 0;
+    }
+
+         
+  </pre>
+</section>
+
+<section id="functions">
+  <h2>Functions</h2>
+  <p>Functions in C allow you to break down your program into modular and reusable pieces of code.<br>
+  Functions in C contribute to code organization, reusability, and readability.<br> They are essential for breaking
+   down complex tasks into smaller, manageable units, making the code more modular and easier to understand.</p>
+   <br>
+  <button onclick="Functions()">Show Example</button>
+  <pre id="Functions" style="display: none;">
+    <h2>Functions:</h2>
+    // C program to show function
+// call and definition
+<h3> #include &lt;stdio.h &gt;</h3>
+
+// Function that takes two parameters 
+// a and b as inputs and returns 
+// their sum  <h3>
+int sum(int a, int b) 
+{ 
+return a + b; 
+}</h3>
+// Driver code
+<h3>int main()
+{</h3>
+// Calling sum function and 
+// storing its value in add variable<h3>
+int add = sum(10, 30);
+
+printf("Sum is: %d", add);
+return 0;
+}</h3>
+</pre>
+</section>
+
+<section id="arrays">
+  <h2>Arrays and Pointers</h2>
+  <p>Arrays and pointers are crucial concepts for handling collections of data in C.
+    <br><br>
+<b>1. Arrays:</b><br>
+- An array is a collection of elements of the same data type stored in contiguous memory locations.
+- Elements in an array are accessed using an index, starting from 0 for the first element.
+- Arrays provide a convenient way to store and manipulate a fixed-size sequence of values.
+<br><br>
+<b>2. Pointers:</b><br>
+- A pointer is a variable that stores the memory address of another variable.
+- Pointers are used to work with dynamic memory allocation, arrays, and to create more flexible functions.
+- The dereference operator (*) is used to access the value at the memory address stored in a pointer.
+<br><br>
+<b>3. Array Pointers:</b><br>
+- Arrays and pointers are closely related in C. The name of an array can be considered as a pointer to the first element of the array.
+- Pointer arithmetic allows you to navigate through array elements using pointer operations.
+<br><br>
+<b>4. Pointer Arithmetic:</b><br>
+- Pointer arithmetic involves adding or subtracting an integer from a pointer, which adjusts the pointer's address based on the size of the data type.
+- For example, if ptr is a pointer to an integer, ptr + 1 points to the next integer in memory.
+<br><br>
+<b>5. Dynamic Memory Allocation:</b><br>
+- Pointers are commonly used with functions like malloc, calloc, and realloc to dynamically allocate memory at runtime.
+- Dynamic memory allocation allows you to create data structures with a variable size.
+<br><br>
+<b>6. Null Pointers:</b><br>
+- A null pointer is a pointer that does not point to any memory location. It is represented by the value NULL in C.
+- Null pointers are used to indicate that a pointer does not currently point to a valid object.
+<br><br>
+<b>7. Pointer to Functions:</b><br>
+- Pointers can also point to functions, allowing you to create more flexible and generic code.
+- This is particularly useful for implementing callback functions and function pointers.
+</p>
+  <!-- Add relevant examples or explanations here -->
+  <button onclick="Arrays()">Show Example</button>
+  <pre id="Arrays" style="display: none;">
+    <h2>Arrays:</h2>
+    // Program to take 5 values from the user and store them in an array
+// Print the elements stored in the array
+
+#include &lt;stdio.h &gt;
+
+int main() {
+
+int values[5];
+
+printf("Enter 5 integers: ");
+
+// taking input and storing it in an array
+for(int i = 0; i < 5; ++i) {
+   scanf("%d", &values[i]);
+}
+
+printf("Displaying integers: ");
+
+// printing elements of an array
+for(int i = 0; i < 5; ++i) {
+   printf("%d\n", values[i]);
+}
+return 0;
+}
+
+    <h3>Pointers:</h3>
+    // C program to illustrate Pointers
+    #include &lt;stdio.h &gt;
+
+void geeks()
+{
+int var = 10;
+
+// declare pointer variable
+int* ptr;
+
+// note that data type of ptr and var must be same
+ptr = &var;
+
+// assign the address of a variable to a pointer
+printf("Value at ptr = %p \n", ptr);
+printf("Value at var = %d \n", var);
+printf("Value at *ptr = %d \n", *ptr);
+}
+
+// Driver program
+int main()
+{
+geeks();
+return 0;
+}
+
+      
+</pre>
+</section>
+
+<section id="structures">
+  <h2>Structures and Unions</h2>
+  <p>Structures and unions enable you to create complex data types by grouping different variables together.</p>
+  <p><h4>In this the structure and unions are same only the keywords are different</h4><br>
+    A structure is a composite data type that groups together variables of different data types under a single name.
+    Each variable within a structure is called a member or field.<br>
+    Structures allow you to create complex data structures to represent real-world entities with multiple attributes.<br><br>
+    <b>Declaration of Structures:</b><br>
+    
+    To define a structure, you use the struct keyword followed by the structure name and a list of members enclosed in curly braces.
+    <br><br>
+    <b>Unions:</b>
+    <br>
+    A union is a special data type that allows you to store different data types in the same memory location.<br>
+    Unlike structures, where all members have their own memory space, in a union, all members share the same memory.<br>
+    Unions are useful when you need to represent a value that can be of different types at different times.<br><br>
+   <b> Declaration of Unions:</b><br>
+    
+    Similar to structures, you use the union keyword to define a union, followed by the union name and a list of members enclosed in curly braces.<br></p>
+
+
+  <!-- Add relevant examples or explanations here -->
+  <button onclick="structures()">Show Example</button>
+  <pre id="tructures" style="display: none;">
+   
+    
+    #include &lt;string-.h &gt;
+      
+      // create struct with person1 variable
+      struct Person {
+        char name[50];
+        int citNo;
+        float salary;
+      } person1;
+      
+      int main() {
+      
+        // assign value to name of person1
+        strcpy(person1.name, "George Orwell");
+      
+        // assign values to other person1 variables
+        person1.citNo = 1984;
+        person1. salary = 2500;
+      
+        // print struct variables
+        printf("Name: %s\n", person1.name);
+        printf("Citizenship No.: %d\n", person1.citNo);
+        printf("Salary: %.2f", person1.salary);
+      
+        return 0;
+      }
+      <h2>Unions:</h2>
+      #include &lt;stdio.h &gt;
+        union Job {
+           float salary;
+           int workerNo;
+        } j;
+        
+        int main() {
+           j.salary = 12.3;
+        
+           // when j.workerNo is assigned a value,
+           // j.salary will no longer hold 12.3
+           j.workerNo = 100;
+        
+           printf("Salary = %.1f\n", j.salary);
+           printf("Number of workers = %d", j.workerNo);
+           return 0;
+        }
+
+    
+</pre>
+</section>
+</section>
+
+<section id="fileHandling">
+  <h2>File Handling</h2>
+  <p>File handling in C involves operations like reading from and writing to files, 
+    which is essential for data persistence.</p>
+
+    <button onclick="FileHandling()">Show Example</button>
+  <pre id="file" style="display: none;">
+    
+    <h2>fileHandling:</h2>
+    #include &lt;stdio.h &gt;
+    
+      int main() {
+          // File pointer
+          FILE *filePointer;
+      
+          // Open file for writing
+          filePointer = fopen("example.txt", "w");
+      
+          // Check if the file is opened successfully
+          if (filePointer == NULL) {
+              printf("Error opening the file.\n");
+              return 1; // Exit with an error
+          }
+      
+          // Write content to the file
+          fprintf(filePointer, "Hello, File Handling in C!");
+      
+          // Close the file
+          fclose(filePointer);
+      
+          // Open file for reading
+          filePointer = fopen("example.txt", "r");
+      
+          // Check if the file is opened successfully
+          if (filePointer == NULL) {
+              printf("Error opening the file.\n");
+              return 1; // Exit with an error
+          }
+      
+          // Read and print content from the file
+          char content[100];
+          fscanf(filePointer, "%[^\n]", content);
+          printf("File Content: %s\n", content);
+      
+          // Close the file
+          fclose(filePointer);
+      
+          return 0; // Exit successfully
+      }
+  </pre>
+</section>
+
+<section id="examples">
+  <h2>C Programming Examples</h2>
+  <button onclick="showSyntax()">Show Example</button>
+  <pre id="example-code" style="display: none;">
+    // Sample C Program
+    #include &lt;stdio.h &gt;
+
+    int main() {
+      printf("Hello, World!\n");
+      return 0;
+    }
+
+    <h2>Arrays:</h2>
+    // Program to take 5 values from the user and store them in an array
+// Print the elements stored in the array
+
+#include &lt;stdio.h &gt;
+
+int main() {
+
+int values[5];
+
+printf("Enter 5 integers: ");
+
+// taking input and storing it in an array
+for(int i = 0; i < 5; ++i) {
+   scanf("%d", &values[i]);
+}
+
+printf("Displaying integers: ");
+
+// printing elements of an array
+for(int i = 0; i < 5; ++i) {
+   printf("%d\n", values[i]);
+}
+return 0;
+}
+
+    <h3>Pointers:</h3>
+    // C program to illustrate Pointers
+    #include &lt;stdio.h &gt;
+
+void geeks()
+{
+int var = 10;
+
+// declare pointer variable
+int* ptr;
+
+// note that data type of ptr and var must be same
+ptr = &var;
+
+// assign the address of a variable to a pointer
+printf("Value at ptr = %p \n", ptr);
+printf("Value at var = %d \n", var);
+printf("Value at *ptr = %d \n", *ptr);
+}
+
+// Driver program
+int main()
+{
+geeks();
+return 0;
+}
+
+<h2>structures:</h2>
+#include &lt;stdio.h &gt;
+#include &lt;string.h &gt;
+      
+      // create struct with person1 variable
+      struct Person {
+        char name[50];
+        int citNo;
+        float salary;
+      } person1;
+      
+      int main() {
+      
+        // assign value to name of person1
+        strcpy(person1.name, "George Orwell");
+      
+        // assign values to other person1 variables
+        person1.citNo = 1984;
+        person1. salary = 2500;
+      
+        // print struct variables
+        printf("Name: %s\n", person1.name);
+        printf("Citizenship No.: %d\n", person1.citNo);
+        printf("Salary: %.2f", person1.salary);
+      
+        return 0;
+      }
+      <h2>Unions:</h2>
+      #include &lt;stdio.h &gt;
+        union Job {
+           float salary;
+           int workerNo;
+        } j;
+        
+        int main() {
+           j.salary = 12.3;
+        
+           // when j.workerNo is assigned a value,
+           // j.salary will no longer hold 12.3
+           j.workerNo = 100;
+        
+           printf("Salary = %.1f\n", j.salary);
+           printf("Number of workers = %d", j.workerNo);
+           return 0;
+        }
+
+        <h2>Functions:</h2>
+        // C program to show function
+    // call and definition
+    <h3> #include &lt;stdio.h &gt;</h3>
+    
+    // Function that takes two parameters 
+    // a and b as inputs and returns 
+    // their sum  <h3>
+    int sum(int a, int b) 
+    { 
+    return a + b; 
+    }</h3>
+    // Driver code
+    <h3>int main()
+    {</h3>
+    // Calling sum function and 
+    // storing its value in add variable<h3>
+    int add = sum(10, 30);
+    
+    printf("Sum is: %d", add);
+    return 0;
+    }
+  </pre>
+</section>
+
+<section id="videos">
+  <h2>Video reference:</h2> <br>
+  <iframe width="550" height="315" src="https://www.youtube.com/embed/0Sg6QHmlFJE" 
+  title="C Programming Full Course for Beginners - Learn C in 2022" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+  </iframe>
+  
+      
+</section>
+
+<script>
+  function toggleSection(sectionId) {
+    var sections = document.querySelectorAll('section');
+    sections.forEach(function(section) {
+      section.style.display = section.id === sectionId ? 'block' : 'none';
+    });
+  }
+
+  function toggleContent(contentId) {
+    var topics = document.querySelectorAll('section');
+    topics.forEach(function(topic) {
+      topic.style.display = topic.id === contentId ? 'block' : 'none';
+    });
+  }
+
+  function showVariableExample() {
+    var exampleElement = document.getElementById("variable-example");
+    exampleElement.style.display = exampleElement.style.display === "none" ? "block" : "none";
+  }
+
+  function controlFlowExample() {
+    var exampleElement = document.getElementById("controlFlow-example");
+    exampleElement.style.display = exampleElement.style.display === "none" ? "block" : "none";
+  }
+
+  function LoopsExample() {
+    var exampleElement = document.getElementById("Loops");
+    exampleElement.style.display = exampleElement.style.display === "none" ? "block" : "none";
+  }
+
+  function Functions() {
+    var exampleElement = document.getElementById("Functions");
+    exampleElement.style.display = exampleElement.style.display === "none" ? "block" : "none";
+  }
+  
+  function Arrays() {
+    var exampleElement = document.getElementById("Arrays");
+    exampleElement.style.display = exampleElement.style.display === "none" ? "block" : "none";
+  }
+
+  function structures() {
+    var exampleElement = document.getElementById("tructures");
+    exampleElement.style.display = exampleElement.style.display === "none" ? "block" : "none";
+  }
+
+
+  function showSyntax() {
+    var exampleElement = document.getElementById("example-code");
+    exampleElement.style.display = exampleElement.style.display === "none" ? "block" : "none";
+  }
+
+  function FileHandling() {
+    var exampleElement = document.getElementById("file");
+    exampleElement.style.display = exampleElement.style.display === "none" ? "block" : "none";
+  }
+  // Add similar functions for other topic examples
+ </script>   
+
+<section id="questions">
+<h2>C Programming Interview Questions</h2>
+<ul>
+    <li>1. What is the difference between malloc and calloc?</li>
+   <b>Ans:</b> malloc and calloc are both functions in the C programming language that are used for dynamic 
+    memory allocation, but they have some key differences.</t> 
+    
+    <br><br>
+    <li>2.Explain the concepts of pass by value and pass by reference in C.</li>
+    <b>Ans:</b> In C, when you pass arguments to a function, the method by which these arguments are
+     passed can be categorized into two main concepts: pass by value and pass by reference.
+
+    <li>3.How are arrays and pointers related in C?</li>
+    <b>Ans:</b>
+    In C, arrays and pointers are closely related, and understanding their relationship is fundamental 
+    to working with C programming. Here are some key points to understand the relationship between arrays and pointers
+
+    <br><br>
+    
+    <li>4.What is the purpose of the const keyword in C?</li>
+    <b>Ans:</b>
+    In the C programming language, the const keyword is used to declare constants and to indicate that a variable's 
+    value should not be modified after it has been initialized. It can be applied to variables, pointers, and function parameters.
+
+    <br><br>
+    <li>5.How does the sizeof operator work in C?</li>
+    <b>Ans:</b>
+     The volatile keyword is used to indicate that a variable may be changed at 
+    any time outside the current code, preventing the compiler from optimizing it.<br>
+ In C, the sizeof operator is used to determine the size, in bytes, of a variable or a data type.
+    <br><br>
+    <li>6. What is the purpose of the volatile keyword in C?</li>
+    <b>Ans:</b>
+    In C, the volatile keyword is used to indicate that a variable's value might change at any time without any action being taken by the code.<br>
+     It tells the compiler not to optimize or cache the value of the variable because it can be modified externally.
+    <br><br>
+    <li>7.Explain the difference between ++i and i++ in C.</li>
+    <b>Ans:</b>
+    In C, both ++i and i++ are increment operators. ++i is the pre-increment operator,
+     which increments the value of 
+    i and then uses the updated value in the expression. <br>
+    i++ is the post-increment operator, which uses the original value of i in the expression and then increments it.
+    <br><br>
+    <li>8.What are the differences between structures and unions in C?</li>
+    <b>Ans:</b>
+    <b>Structures (struct):</b>
+<br>
+Members have their individual memory spaces.
+Each member holds different information.
+Size is the sum of member sizes.
+All members can be accessed independently.
+Used for storing multiple types of data simultaneously.<br>
+<b>Unions (union):</b>
+<br>
+Members share the same memory space.
+Only one member is active at a time.
+Size is determined by the largest member.
+Modifying one member affects others.
+Ideal when only one type of data needs storage or access at any given time.
+    <br><br>
+    <li>9.How do you use enum in C to define constants?</li>
+    <b>Ans:</b>
+    In C, you can use enum (enumeration) to define a set of named integer constants, providing a way to create symbolic names for integral values.
+    <br><br>
+
+    <li>10.What is a pointer to a function in C? Provide an example.</li>
+    <b>Ans:</b>
+    In C, a pointer to a function is a variable that stores the memory address of a function. It allows you to call a function indirectly
+     through the pointer, providing flexibility in function invocation.<br>
+     The syntax for declaring a function pointer involves specifying the return type and parameter types of the function it points to
+    <br><br>
+    <li>11.Explain the purpose of the #include directive in C.</li>
+    <b>Ans:</b>
+    The #include directive aids in creating modular and maintainable code by allowing developers to 
+    organize their code into separate files and reuse components across different parts of a program.
+    <br><br>
+    <li>12.What is the role of the static keyword in C?</li>
+    <b>Ans:</b>
+    the static keyword in C can be used to control the scope and lifetime of variables and functions,
+     both within functions and at the global level.
+    <br><br>
+    <li>13.How does memory management work in C? Explain the use of free() function.</li>
+    <b>Ans:</b>
+    Memory management in C involves the allocation and deallocation of memory during program execution.
+     C provides several functions for dynamic memory allocation,
+     and the free() function is used for deallocating memory that was previously allocated by functions like malloc(), calloc(), or realloc().
+    <br><br>
+    <li>14.What is a preprocessor in C? Explain some commonly used preprocessor directives.</li>
+    <b>Ans:</b>
+    In C, the preprocessor is a tool that performs text manipulations on the source code before it is compiled.<br>
+     It handles directives, which are commands beginning with the # symbol.
+    <br><br>
+    <li>15.How do you implement file I/O operations in C?</li>
+    <b>Ans:</b>
+    Input/output (I/O) operations in C involve reading data from standard input (keyboard) or
+     other sources,
+     and writing data to standard output (console) or other destinations like files.
+
+    <br><br>
+</ul>
+</section>
+<br><br><br><br><br>
+
+
+
+<center>
+<hr color="">
+        <a href="final0.html">home</a> | <a href="">about us</a>
+      </center>
+</body>
+</html>
